@@ -1,3 +1,5 @@
 <Solution>
   <Project Path="FlowerShop/FlowerShop.csproj" />
+  <Project Path="FlowerShopBackground/FlowerShopBackground.csproj" Id="168f8fcf-d72c-4168-872f-3e11aa11f2b6" />
+  <Project Path="FlowerShopSharedModels/FlowerShopSharedModels.csproj" Id="178e1414-41ad-4367-9a9f-d99c5947a0f8" />
 </Solution>
