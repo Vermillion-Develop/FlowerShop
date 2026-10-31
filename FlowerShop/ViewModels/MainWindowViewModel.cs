@@ -1,7 +1,27 @@
-﻿namespace FlowerShop.ViewModels
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
+using FlowerShop.Services.api;
+using FlowerShop.Services.interfaces;
+using System.Threading.Tasks;
+
+namespace FlowerShop.ViewModels
 {
     public partial class MainWindowViewModel : ViewModelBase
     {
-        public string Greeting { get; } = "Welcome to Avalonia!";
+        [ObservableProperty]
+        private object _currentGlobalScreen; // Текущий экран
+
+        public MainWindowViewModel()
+        {
+            _currentGlobalScreen = new StartPageViewModel(this); // По умолчанию экран
+        }
+
+        public async Task GoToRegistration()
+        {
+            CurrentGlobalScreen = new RegisterPageViewModel(this);
+        }
+
+
+
     }
 }

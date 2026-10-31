@@ -7,7 +7,8 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
 // Add services to the container.
 
 builder.Services.AddDbContext<AppDataContext>(options =>
-    options.UseNpgsql(connectionString));
+    options.UseNpgsql(connectionString)
+           .UseSnakeCaseNamingConvention());
 
 builder.Services.AddControllers();
 builder.WebHost.UseUrls("http://0.0.0");

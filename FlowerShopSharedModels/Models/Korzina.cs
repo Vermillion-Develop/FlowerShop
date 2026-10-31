@@ -7,9 +7,9 @@ namespace FlowerShopSharedModels.Models
     public class Korzina
     {
         public int Id { get; set; }
-        public int User_Id { get; set; }
-        public int Product_Id { get; set; }
-        public string? Delivery_Adress { get; set; }
+        public int UserId { get; set; }
+        public int ProductId { get; set; }
+        public string? DeliveryAdress { get; set; }
         public decimal? Cost { get; set; }
     }
 }

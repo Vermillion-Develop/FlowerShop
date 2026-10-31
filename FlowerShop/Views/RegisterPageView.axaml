@@ -1,0 +1,20 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:FlowerShop.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="FlowerShop.Views.RegisterPageView"
+        x:DataType="vm:RegisterPageViewModel">
+
+    <Design.DataContext>
+        <vm:RegisterPageViewModel/>
+    </Design.DataContext>
+    <Grid ColumnDefinitions="20*, 60*, 20*" RowDefinitions="20*, 80*">
+        <Button Content="Назад" Command="{Binding BackToStartCommand}">
+            
+        </Button>
+    </Grid>
+   
+
+</UserControl>

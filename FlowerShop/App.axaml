@@ -1,12 +1,21 @@
 <Application xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              x:Class="FlowerShop.App"
+             xmlns:views="using:FlowerShop.Views"
+             xmlns:vm="using:FlowerShop.ViewModels"
              xmlns:local="using:FlowerShop"
+             xmlns:viewmodels="using:FlowerShop.ViewModels"
              RequestedThemeVariant="Default">
              <!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
 
+
     <Application.DataTemplates>
-        <local:ViewLocator/>
+        <DataTemplate DataType="{x:Type vm:StartPageViewModel}">
+            <views:StartPageView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:RegisterPageViewModel}">
+            <views:RegisterPageView />
+        </DataTemplate>
     </Application.DataTemplates>
   
     <Application.Styles>
