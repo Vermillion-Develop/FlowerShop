@@ -23,6 +23,7 @@ namespace FlowerShop.ViewModels
         {
             _userApi = new UserApi();
             _mainViewModel = mainViewModel;
+            Title = "Вход в систему";
         }
 
         [RelayCommand]

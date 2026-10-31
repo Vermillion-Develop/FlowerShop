@@ -13,12 +13,13 @@
     <Grid ColumnDefinitions="20*, 60*, 20*" RowDefinitions="20*, 80*">
         <Grid Grid.Row="0" Grid.ColumnSpan="3" Background="#726A6A">
             <TextBlock FontSize="24" FontWeight="Bold"  Foreground="#FF3554" VerticalAlignment="Center" Margin="10,0,0,0" Text="FlowerShop"/>
+            <TextBlock Text="{Binding Title}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" Foreground="#FF3554"/>
         </Grid>
         <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Vertical" VerticalAlignment="Center">
             <TextBlock Text="Логин"/>
             <TextBox Text="{Binding Login, Mode=TwoWay}"/>
             <TextBlock Text="Пароль" Margin="0,10,0,0"/>
-            <TextBox PasswordChar="*" Text="{Binding Password, Mode=TwoWay}"/>
+            <TextBox PasswordChar="&#x267F;" Text="{Binding Password, Mode=TwoWay}"/>
             <StackPanel Orientation="Horizontal">
                 <Button Command="{Binding GetLogginedCommand}" Cursor="Hand" Background="#FF355F" Foreground="White" Content="Войти" Margin="0,10,5,0">
                     <Button.Styles>

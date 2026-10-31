@@ -7,13 +7,62 @@
         x:Class="FlowerShop.Views.RegisterPageView"
         x:DataType="vm:RegisterPageViewModel">
 
-    <Design.DataContext>
+    <!-- <Design.DataContext>
         <vm:RegisterPageViewModel/>
-    </Design.DataContext>
-    <Grid ColumnDefinitions="20*, 60*, 20*" RowDefinitions="20*, 80*">
-        <Button Content="Назад" Command="{Binding BackToStartCommand}">
-            
-        </Button>
+    </Design.DataContext> -->
+    <Grid ColumnDefinitions="47*, 6*, 47*" RowDefinitions="20*, 80*">
+        <Grid Grid.Row="0" Grid.ColumnSpan="3" Background="#726A6A">
+            <TextBlock FontSize="24" FontWeight="Bold"  Foreground="#FF3554" VerticalAlignment="Center" Margin="10,0,0,0" Text="FlowerShop"/>
+            <TextBlock Text="{Binding Title}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" Foreground="#FF3554"/>
+        </Grid>
+        <Grid Grid.Row="1" Grid.Column="0" Margin="20,10,0,0">
+            <StackPanel>
+                <TextBlock Text="Фамилия"/>
+                <TextBox Text="{Binding Family, Mode=TwoWay}" MaxLength="150" PlaceholderText="Введите фамилию" Margin="0,10,0,0"/>
+                <TextBlock HorizontalAlignment="Right" Text="{Binding CapacityFamily}" FontSize="12"/>
+                <TextBlock Text="Имя"/>
+                <TextBox Text="{Binding Name, Mode=TwoWay}" MaxLength="150" PlaceholderText="Введите имя" Margin="0,10,0,0"/>
+                <TextBlock HorizontalAlignment="Right" Text="{Binding CapacityName, Mode=TwoWay}" FontSize="12"/>
+                <TextBlock  Text="Отчество"/>
+                <TextBox Text="{Binding Father, Mode=TwoWay}" MaxLength="150" PlaceholderText="Введите отчество" Margin="0,10,0,0"/>
+                <TextBlock HorizontalAlignment="Right" Text="{Binding CapacityFather, Mode=TwoWay}" FontSize="12"/>
+                <TextBlock Text="Телефон"/>
+                <TextBox Text="{Binding Phone, Mode=TwoWay}" MaxLength="11" PlaceholderText="Введите телефон" Margin="0,10,0,0"/>
+                <TextBlock HorizontalAlignment="Right" Text="{Binding CapacityPhone, Mode=TwoWay}" FontSize="12"/>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Row="1" Grid.Column="2" Margin="0,10,20,0">
+            <StackPanel>
+                <TextBlock Text="Логин" Margin="0,00,0,10"/>
+                <TextBox Text="{Binding Login, Mode=TwoWay}" MaxLength="150" PlaceholderText="Введите логин"/>
+                <TextBlock HorizontalAlignment="Right" Text="{Binding CapacityLogin, Mode=TwoWay}" FontSize="12"/>
+                <TextBlock Text="Пароль" Margin="0,00,0,10"/>
+                <TextBox PasswordChar="&#x267F;" PlaceholderText="Введите пароль"/>
+                <TextBlock Text="Подтвердите пароль" Margin="0,10,0,10"/>
+                <TextBox PasswordChar="&#x267F;" PlaceholderText="Подтвердите пароль"/>
+                <StackPanel Orientation="Horizontal" Margin="0,25,0,0">
+                    <Button Background="#FF355F" Cursor="Hand" Foreground="#FFFFFF" Content="Зарегистрироваться" Margin="0,0,5,0">
+                        <Button.Styles>
+                            <Style Selector=":pointerover /template/ ContentPresenter">
+                                <Setter Property="Background" Value="#CC1F1F"/>
+                                <Setter Property="Foreground" Value="#FFFFFF"/>
+                            </Style>
+                        </Button.Styles>
+                    </Button>
+                    <Button Background="#FF355F" Cursor="Hand" Foreground="#FFFFFF" Content="Назад" Command="{Binding BackToStartCommand}" Margin="0,0,0,0">
+                        <Button.Styles>
+                            <Style Selector=":pointerover /template/ ContentPresenter">
+                                <Setter Property="Background" Value="#CC1F1F"/>
+                                <Setter Property="Foreground" Value="#FFFFFF"/>
+                            </Style>
+                        </Button.Styles>
+                    </Button>
+                </StackPanel>
+                
+            </StackPanel>
+        </Grid>
+        
+        
     </Grid>
    
 

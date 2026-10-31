@@ -9,11 +9,11 @@ namespace FlowerShop.ViewModels
     public partial class MainWindowViewModel : ViewModelBase
     {
         [ObservableProperty]
-        private object _currentGlobalScreen; // Текущий экран
+        private object _currentGlobalScreen;
 
         public MainWindowViewModel()
         {
-            _currentGlobalScreen = new StartPageViewModel(this); // По умолчанию экран
+            _currentGlobalScreen = new StartPageViewModel(this);
         }
 
         public async Task GoToRegistration()
