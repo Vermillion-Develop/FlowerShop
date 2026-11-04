@@ -1,5 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using FlowerShop.Services;
 using FlowerShop.Services.api;
 using FlowerShop.Services.interfaces;
 using System.Threading.Tasks;
@@ -40,6 +41,8 @@ namespace FlowerShop.ViewModels
                 Error = "Неверный логин или пароль";
                 return;
             }
+            CurrentUser.LoginedUser = result;
+            await _mainViewModel.GoToSystem();
             Error = "Успешный вход!";
         }
 

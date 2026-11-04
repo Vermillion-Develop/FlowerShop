@@ -21,6 +21,11 @@ namespace FlowerShop.ViewModels
             CurrentGlobalScreen = new RegisterPageViewModel(this);
         }
 
+        public async Task GoToSystem()
+        {
+            CurrentGlobalScreen = new PrimaryPageViewModel(this);
+        }
+
 
 
     }

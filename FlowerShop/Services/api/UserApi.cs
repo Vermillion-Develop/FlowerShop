@@ -39,5 +39,24 @@ namespace FlowerShop.Services.api
 			}
         }
 
+        public async Task<bool> SignUpAsync(string family, string name, string father, string phone, string login, string password)
+        {
+            try
+            {
+                SignUpRequestDTO request = new SignUpRequestDTO() {Family = family, Name = name, Father = father, Phone = phone, Login = login, Password = password };
+                var response = await _httpClient.PostAsJsonAsync("api/User/signUp", request);
+                if (response.IsSuccessStatusCode)
+                {
+                    return true;
+                }
+                return false;
+            }
+            catch(Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+                return false;
+            }
+        }
+
     }
 }

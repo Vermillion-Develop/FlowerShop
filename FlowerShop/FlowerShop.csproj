@@ -41,6 +41,9 @@
     <Compile Update="Views\RegisterPageView.axaml.cs">
       <DependentUpon>RegisterPageView.axaml</DependentUpon>
     </Compile>
+    <Compile Update="Views\PrimaryPageView.axaml.cs">
+      <DependentUpon>PrimaryPageView.axaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\StartPageView.axaml.cs">
       <DependentUpon>StartPageView.axaml</DependentUpon>
     </Compile>

@@ -1,0 +1,42 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:FlowerShop.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="FlowerShop.Views.PrimaryPageView"
+        x:DataType="vm:PrimaryPageViewModel">
+
+    <Design.DataContext>
+        <vm:PrimaryPageViewModel/>
+    </Design.DataContext>
+    <Grid RowDefinitions="20*, 80*">
+        <Grid Grid.Row="0" Background="#726A6A">
+            <TextBlock FontSize="24" FontWeight="Bold"  Foreground="#FF3554" VerticalAlignment="Center" Margin="10,0,0,0" Text="FlowerShop"/>
+            <TextBlock Text="{Binding Title}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" Foreground="#FF3554"/>
+        </Grid>
+        <ScrollViewer Grid.Row="1">
+            <Grid Grid.Row="1" Background="#302727">
+                    <ListBox ItemsSource="{Binding Products}">
+                        <ListBox.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <WrapPanel Orientation="Horizontal"/>
+                            </ItemsPanelTemplate>
+                        </ListBox.ItemsPanel>
+
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Width="125" Height="125" Margin="15" Orientation="Vertical">
+                                    <TextBlock Text="{Binding Name}" HorizontalAlignment="Center"/>
+                                    <Image Width="50" Height="50" Source="/Assets/avalonia-logo.ico"/>
+                                    <TextBlock Text="{Binding Cost}" HorizontalAlignment="Center"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </Grid>
+            </ScrollViewer>        
+    </Grid>
+   
+
+</UserControl>

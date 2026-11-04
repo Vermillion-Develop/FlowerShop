@@ -37,11 +37,11 @@
                 <TextBox Text="{Binding Login, Mode=TwoWay}" MaxLength="150" PlaceholderText="Введите логин"/>
                 <TextBlock HorizontalAlignment="Right" Text="{Binding CapacityLogin, Mode=TwoWay}" FontSize="12"/>
                 <TextBlock Text="Пароль" Margin="0,00,0,10"/>
-                <TextBox PasswordChar="&#x267F;" PlaceholderText="Введите пароль"/>
+                <TextBox Text="{Binding Password, Mode=TwoWay}" PasswordChar="&#x267F;" PlaceholderText="Введите пароль"/>
                 <TextBlock Text="Подтвердите пароль" Margin="0,10,0,10"/>
-                <TextBox PasswordChar="&#x267F;" PlaceholderText="Подтвердите пароль"/>
+                <TextBox Text="{Binding SecondPassword, Mode=TwoWay}" PasswordChar="&#x267F;" PlaceholderText="Подтвердите пароль"/>
                 <StackPanel Orientation="Horizontal" Margin="0,25,0,0">
-                    <Button Background="#FF355F" Cursor="Hand" Foreground="#FFFFFF" Content="Зарегистрироваться" Margin="0,0,5,0">
+                    <Button Command="{Binding GettedRegisterCommand}" Background="#FF355F" Cursor="Hand" Foreground="#FFFFFF" Content="Зарегистрироваться" Margin="0,0,5,0">
                         <Button.Styles>
                             <Style Selector=":pointerover /template/ ContentPresenter">
                                 <Setter Property="Background" Value="#CC1F1F"/>
@@ -58,7 +58,7 @@
                         </Button.Styles>
                     </Button>
                 </StackPanel>
-                
+                <TextBlock Foreground="red" HorizontalAlignment="Center" Text="{Binding Error}" Margin="0,10,0,0"/>
             </StackPanel>
         </Grid>
         
